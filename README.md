@@ -1,5 +1,7 @@
 # ArcBitrage
 
+> Consulta el [pitch deck en español](docs/pitch-deck-es.md) para una presentación completa de la propuesta de valor, producto, modelo de negocio, go-to-market y roadmap.
+
 Monitor **USDC → WBTC** quotes on a Uniswap V2-compatible Arc DEX, compare the marked output with an external BTC reference, estimate native-USDC gas, and optionally submit a slippage-protected swap through Circle Developer-Controlled Wallets.
 
 > **Important:** this is an execution prototype, not a guaranteed-return strategy. A one-way purchase is not risk-free arbitrage: realizing profit requires an independently available sale/hedge venue. Start on testnet and keep `DRY_RUN=true` until contracts, token decimals, wallet policy, approvals, and Circle support for the selected chain have been verified.
