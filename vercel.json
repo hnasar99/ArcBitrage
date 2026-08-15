@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": { "api/proxy.js": { "maxDuration": 10 } },
+  "rewrites": [
+    { "source": "/api/status", "destination": "/api/proxy?path=status" },
+    { "source": "/api/bot/toggle", "destination": "/api/proxy?path=bot%2Ftoggle" },
+    { "source": "/api/bot/config", "destination": "/api/proxy?path=bot%2Fconfig" },
+    { "source": "/app.js", "destination": "/ui/app.js" },
+    { "source": "/styles.css", "destination": "/ui/styles.css" },
+    { "source": "/", "destination": "/ui/index.html" }
+  ]
+}

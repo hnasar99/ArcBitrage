@@ -1,0 +1,19 @@
+{
+  "name": "arcbitrage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Risk-aware USDC/WBTC opportunity monitor and executor for Arc",
+  "scripts": {
+    "start": "node server/app.js",
+    "start:agent": "node src/index.js",
+    "check": "node --check src/index.js && node --check src/agent.js && node --check server/app.js && node --check ui/app.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@circle-fin/developer-controlled-wallets": "^1.2.0",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5"
+  }
+}

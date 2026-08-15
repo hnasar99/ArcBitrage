@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07100e"><title>ArcBitrage · Command Center</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span>ARCBITRAGE<small>AGENT COMMAND</small></span></a>
+    <div class="network"><i></i><span>ARC TESTNET</span><b>5,042,002</b></div>
+    <div class="top-actions"><span class="latency"><i></i> STREAM LIVE</span><button class="icon-btn" aria-label="Notificaciones">⌁</button><div class="avatar">OP</div></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">AUTONOMOUS EXECUTION LAYER</p><h1>Liquidity intelligence,<br><em>executed at speed.</em></h1><p class="sub">Monitoreo USDC / WBTC en Arc L1. Señales, gas y performance en un único plano operativo.</p></div>
+      <div class="agent-control">
+        <div><span class="label">ESTADO DEL AGENTE</span><strong id="agentLabel">En pausa</strong><small id="lastCycle">Esperando activación</small></div>
+        <button id="toggle" class="power"><span class="power-icon">◉</span><span id="toggleText">INICIAR AGENTE</span></button>
+      </div>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric primary"><div class="metric-head"><span id="yieldLabel">RENDIMIENTO CAPTURADO</span><b>USDC</b></div><div class="metric-value" id="yield">0.00</div><div class="metric-foot positive">↗ <span id="executions">0 ejecuciones</span></div></article>
+      <article class="metric"><div class="metric-head"><span>EDGE ACTUAL</span><b>SPREAD</b></div><div class="metric-value"><span id="spread">—</span><sup> bps</sup></div><div class="metric-foot" id="profit">Sin señal activa</div></article>
+      <article class="metric"><div class="metric-head"><span>EFICIENCIA</span><b>HIT RATE</b></div><div class="metric-value"><span id="hitRate">0.0</span><sup>%</sup></div><div class="metric-foot"><span id="scans">0</span> ciclos analizados</div></article>
+      <article class="metric"><div class="metric-head"><span>GAS ESTIMADO</span><b>ARC</b></div><div class="metric-value"><span id="gas">—</span><sup> USDC</sup></div><div class="metric-foot positive">Gas nativo</div></article>
+    </section>
+
+    <section class="workspace">
+      <article class="panel chart-panel">
+        <div class="panel-head"><div><span class="label">SIGNAL TELEMETRY</span><h2>Spread & opportunity</h2></div><div class="legend"><i></i> Spread USDC/WBTC</div></div>
+        <div class="chart-wrap"><canvas id="chart"></canvas><div id="emptyChart" class="chart-empty">INICIA EL AGENTE PARA RECIBIR TELEMETRÍA</div></div>
+        <div class="quote-strip"><div><span>BINANCE REF.</span><strong id="refPrice">—</strong></div><div><span>ARC DEX</span><strong id="dexPrice">—</strong></div><div><span>UMBRAL NETO</span><strong id="threshold">—</strong></div></div>
+      </article>
+      <aside class="panel settings">
+        <div class="panel-head"><div><span class="label">STRATEGY CONTROL</span><h2>Parámetros</h2></div><span class="safe">● DRY RUN</span></div>
+        <form id="configForm"><label>CAPITAL POR OPERACIÓN <span>USDC</span><div class="input"><input id="amount" type="number" min="1" step="1"><b>USDC</b></div></label><label>BENEFICIO NETO MÍNIMO <span>USDC</span><div class="input"><input id="minimum" type="number" min="0.01" step="0.01"><b>USDC</b></div></label><button type="submit" class="save">ACTUALIZAR ESTRATEGIA</button></form>
+        <div class="safety"><span>◈</span><p><strong>Ejecución protegida</strong>Slippage limitado, deadline y simulación activos.</p></div>
+      </aside>
+    </section>
+
+    <section class="panel activity"><div class="panel-head"><div><span class="label">EXECUTION LEDGER</span><h2>Actividad reciente</h2></div><span id="streamState" class="stream">● CONECTANDO</span></div><div class="table-wrap"><table><thead><tr><th>TIEMPO</th><th>ESTADO</th><th>REF / DEX</th><th>SPREAD</th><th>NETO</th><th>TRANSACCIÓN</th></tr></thead><tbody id="history"><tr><td colspan="6" class="empty">Sin ejecuciones todavía. El ledger se actualizará en tiempo real.</td></tr></tbody></table></div></section>
+  </main>
+  <div id="toast" role="status"></div><script type="module" src="/app.js"></script>
+</body></html>
